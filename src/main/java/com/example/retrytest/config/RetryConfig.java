@@ -20,7 +20,7 @@ public class RetryConfig {
         retryTemplate.setBackOffPolicy(backOffPolicy);
 
         SimpleRetryPolicy retryPolicy = new SimpleRetryPolicy();
-        retryPolicy.setMaxAttempts(3); // 재시도 횟수
+        retryPolicy.setMaxAttempts(2); // 재시도 횟수
         retryTemplate.setRetryPolicy(retryPolicy);
 
         // 리스너 등록

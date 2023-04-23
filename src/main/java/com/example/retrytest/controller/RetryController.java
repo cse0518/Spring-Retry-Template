@@ -1,6 +1,5 @@
 package com.example.retrytest.controller;
 
-
 import com.example.retrytest.service.RetryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,10 +16,12 @@ public class RetryController {
 
     @GetMapping("/{value}")
     public int success(@PathVariable int value) {
-        System.out.println("input 값 : " + value);
+        log.info("input 값 : " + value);
         retryService.setting(value);
+
         retryService.test();
-        System.out.println("return : " + retryService.getGlobal());
+
+        log.info("return : " + retryService.getGlobal());
         return retryService.getGlobal();
     }
 }

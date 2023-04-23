@@ -27,7 +27,7 @@ public class RetryService {
     )
     public void test() {
         global++;
-        System.out.println("1 더해요");
+        log.info("1 더하기");
 
         if (global % 4 == 0) {
             return;
@@ -37,6 +37,6 @@ public class RetryService {
 
     @Recover
     public void recover(RuntimeException e, String name) {
-        System.out.println(e.getMessage() + ", " + name);
+        log.info(e.getMessage() + ", " + name);
     }
 }
